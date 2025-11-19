@@ -1,35 +1,34 @@
 
-
 (() => {
-  const $ = (sel, root = document) => root.querySelector(sel);
-  const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+  const $ = (q, root = document) => root.querySelector(q);
+  const $$ = (q, root = document) => Array.from(root.querySelectorAll(q));
 
   
-  const yearEl = document.getElementById('2025');
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
+  const year = document.getElementById("year");
+  if (year) year.textContent = new Date().getFullYear();
 
- 
-  const preload = [
-    'https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto%2Cq_auto/Model-S-New-Specs-Plaid-Desktop-Imperial.png',
-    'https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto%2Cq_auto/Model-3-Standard-Specs-Desktop-Imperial.png',
-    'https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto%2Cq_auto/Model-X-New-Specs-Plaid-Desktop-Imperial.png'
-  ];
-  preload.forEach(src => { const i = new Image(); i.src = src; });
 
- 
   $$('.model-card').forEach(card => {
-    const btn = card.querySelector('.transform');
-    btn && btn.addEventListener('click', () => {
-      card.classList.toggle('transformed');
-      
-      const img = card.querySelector('.model-img');
-      if (img && img.animate) {
-        img.animate(
-          [{ transform: 'scale(1)' }, { transform: 'scale(1.03)' }, { transform: 'scale(1)' }],
-          { duration: 420, easing: 'ease-out' }
-        );
-      }
-    });
+    const transformBtn = card.querySelector('.btn-transform');
+    const img = card.querySelector('.car-img');
+
+    if (transformBtn) {
+      transformBtn.addEventListener('click', () => {
+        card.classList.toggle('transformed');
+
+       
+        if (img) {
+          img.animate([
+            { transform: 'scale(1) rotate(0)' },
+            { transform: 'scale(1.05) rotate(1deg)' },
+            { transform: 'scale(1) rotate(0)' }
+          ], {
+            duration: 500,
+            easing: 'cubic-bezier(.22,.61,.36,1)'
+          });
+        }
+      });
+    }
   });
 
 
@@ -39,48 +38,34 @@
       const cards = $$('.model-card');
       const any = cards.some(c => c.classList.contains('transformed'));
       cards.forEach(c => c.classList.toggle('transformed', !any));
-     
-      cards.forEach(c => {
-        const img = c.querySelector('.model-img');
-        if (img && img.animate) {
-          img.animate(
-            [{ transform: 'translateY(0) scale(1)' }, { transform: 'translateY(-8px) scale(1.02)' }, { transform: 'translateY(0) scale(1)' }],
-            { duration: 520, easing: 'cubic-bezier(.2,.9,.2,1)' }
-          );
-        }
-      });
-    });
-  }
-
-  
-  const heroImg = document.getElementById('heroImage');
-  if (heroImg) {
-    heroImg.addEventListener('click', () => {
-      heroImg.classList.toggle('transformed');
-      heroImg.animate([{ transform: 'scale(1)' }, { transform: 'scale(1.03)' }, { transform: 'scale(1)' }], { duration: 360, easing: 'ease-out' });
     });
   }
 
  
+  const heroCar = document.getElementById('heroCar');
+  if (heroCar) {
+    heroCar.addEventListener('click', () => {
+      heroCar.classList.toggle('transformed');
+    });
+  }
+
+
+  $$('.car-img').forEach(img => {
+    img.addEventListener('mouseenter', () => {
+      img.classList.add('color-shift');
+    });
+    img.addEventListener('mouseleave', () => {
+      img.classList.remove('color-shift');
+    });
+  });
+
+  
   window.addEventListener('keydown', e => {
-    if (e.key && e.key.toLowerCase() === 't') {
+    if (e.key.toLowerCase() === 't') {
       const btn = document.getElementById('globalTransform');
-      btn && btn.click();
+      if (btn) btn.click();
     }
   });
 
- 
-  document.addEventListener('pointerdown', e => {
-    const t = e.target.closest('.btn');
-    if (t) t.style.transform = 'translateY(1px) scale(0.997)';
-  });
-  document.addEventListener('pointerup', e => {
-    const t = e.target.closest('.btn');
-    if (t) t.style.transform = '';
-  });
-
- 
-  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    document.documentElement.classList.add('reduced-motion');
-  }
 })();
+
