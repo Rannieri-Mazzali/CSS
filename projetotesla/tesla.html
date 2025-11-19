@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tesla Automorphosis — Rannieri Mazzali</title>
+  <meta name="description" content="Demo: carros Tesla que se transformam em robôs — projeto por Rannieri Mazzali" />
+  <link rel="stylesheet" href="tesla.css">
+  <link rel="stylesheet" href="tesla.java">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <div class="logo-mark" aria-hidden="true"></div>
+      <div>
+        <h1>Tesla — Automorphosis</h1>
+        <p class="tag">Veículos que emergem. Futuro que transforma.</p>
+      </div>
+    </div>
+
+    <nav class="nav" aria-label="Principal">
+      <a href="#models">Modelos</a>
+      <a href="#showcase">Showcase</a>
+      <a href="#about">Sobre</a>
+      <a class="cta" href="https://github.com/your-username/tesla-automorphosis" target="_blank" rel="noopener">Ver no GitHub</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <h2>Quando carro e máquina convergem.</h2>
+          <p>Exploração visual de veículos Tesla que se transformam em autômatos — animações SVG + CSS + JavaScript. Projeto conceptual e técnico por <strong>Rannieri Mazzali</strong>.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#models">Explorar Modelos</a>
+            <button id="globalTransform" class="btn ghost">Transformar Todos (T)</button>
+          </div>
+        </div>
+
+        <div class="hero-viz" aria-hidden="true">
+          <!-- hero preview uses the Model S image -->
+          <figure class="hero-figure">
+            <img id="heroImage" src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto%2Cq_auto/Model-S-New-Specs-Plaid-Desktop-Imperial.png" alt="Tesla Model S — visual" />
+            <figcaption>Model S — clique para transformar</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="models" class="models">
+      <h3>Modelos</h3>
+      <p class="intro">Selecione um modelo para vê-lo emergir em uma animação estilizada. Imagens oficiais da Tesla usadas para demonstração (créditos no rodapé).</p>
+
+      <div id="showcase" class="cards">
+
+        <!-- Card: Model S -->
+        <article class="model-card" data-model="model-s">
+          <div class="visual">
+            <img class="model-img" src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto%2Cq_auto/Model-S-New-Specs-Plaid-Desktop-Imperial.png" alt="Tesla Model S" />
+          </div>
+          <div class="meta">
+            <h4>Model S — Automorph</h4>
+            <p class="desc">Elegância e performance — agora emergindo como autômato.</p>
+            <div class="controls">
+              <button class="btn transform">Transformar</button>
+              <a class="link" href="https://www.tesla.com/models" target="_blank" rel="noopener">Saiba mais</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card: Model 3 -->
+        <article class="model-card" data-model="model-3">
+          <div class="visual">
+            <img class="model-img" src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto%2Cq_auto/Model-3-Standard-Specs-Desktop-Imperial.png" alt="Tesla Model 3" />
+          </div>
+          <div class="meta">
+            <h4>Model 3 — Agileform</h4>
+            <p class="desc">Leve, rápido — dobra-se e adapta-se ao comando.</p>
+            <div class="controls">
+              <button class="btn transform">Transformar</button>
+              <a class="link" href="https://www.tesla.com/model3" target="_blank" rel="noopener">Saiba mais</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card: Model X -->
+        <article class="model-card" data-model="model-x">
+          <div class="visual">
+            <img class="model-img" src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto%2Cq_auto/Model-X-New-Specs-Plaid-Desktop-Imperial.png" alt="Tesla Model X" />
+          </div>
+          <div class="meta">
+            <h4>Model X — Guardian</h4>
+            <p class="desc">Presença imponente — um guardião emergente.</p>
+            <div class="controls">
+              <button class="btn transform">Transformar</button>
+              <a class="link" href="https://www.tesla.com/modelx" target="_blank" rel="noopener">Saiba mais</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <h3>Sobre o projeto</h3>
+      <p>Projeto conceitual que mistura UI, imagens oficiais (Tesla), SVG/HTML/CSS e micro-interações JavaScript. Feito para portfólio técnico e visual.</p>
+      <p class="signature">Feito com paixão por — <strong>Rannieri Mazzali</strong></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <small>© <span id="year"></span> Rannieri Mazzali — Tesla Automorphosis</small>
+    </div>
+    <div class="footer-links">
+      <a href="https://www.tesla.com" target="_blank" rel="noopener">Tesla (imagens oficiais)</a>
+      <a href="https://github.com/your-username/tesla-automorphosis" target="_blank" rel="noopener">Repositório</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
