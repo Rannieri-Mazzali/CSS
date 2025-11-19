@@ -1,0 +1,288 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'oswald', sans-serif;
+}
+
+header {
+    border-radius: 3%;
+    padding-right: 2%;
+    height: 101vh;
+    width: 86vh;
+    color: #5d5d7d;
+    background-color: rgba(93, 93, 125, 0.16);
+    padding-top: 4vh;
+    padding-left: 5vh;
+    padding-right: 5vh;
+    display: inline-block;
+    position: absolute;
+    white-space: nowrap;
+    right: 0%;
+
+}
+
+.main {
+    display: inline-block;
+    height: 100vh;
+    width: 100vh;
+}
+
+.section-left {
+    display: inline-block;
+    width: 80%;
+
+}
+
+.links {
+    margin: 1px 8px 0px 76px;
+    cursor: pointer;
+
+}
+
+a:nth-child(2) {
+    opacity: 0.8;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+.Easy {
+    margin: 30px 40px 10px 10px;
+    width: 368px;
+    height: 160px;
+    font-weight: 400;
+    font-size: 65px;
+    line-height: 80px;
+    color: rgb(93, 93, 125);
+    padding: 115px 0px 0px 2px;
+
+}
+
+h1 {
+    height: 368px;
+    width: 160px;
+}
+
+h1:hover {
+    opacity: 0.8;
+}
+
+p {
+    color: rgb(93, 93, 125);
+    width: 560px;
+    height: 144px;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 48px;
+    opacity: 0.6;
+    margin: 150px 8px 260px 22px;
+
+}
+
+.img {
+    height: 79vh;
+    width: 64vh;
+    position: relative;
+    bottom: 96vh;
+    margin-left: 140%;
+
+
+
+}
+
+section {
+    display: inline-block;
+
+}
+
+
+.button {
+    margin-left: 18px;
+    box-shadow: 0px 10px 24px rgba(148, 153, 234, 0.97);
+    background: #9499ea;
+    height: 62px;
+    width: 269px;
+    font-size: 24px;
+    line-height: 36px;
+    text-align: center;
+    color: #FFFF;
+    border: none;
+    border-radius: 30px;
+    position: relative;
+    bottom: 30vh;
+    cursor: pointer;
+
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+@media screen and (max-width: 800px) {
+
+
+    .Easy {
+        font-size: 56px;
+        width: 65%;
+        height: 50%;
+        margin: 19px 3px 5px 5px;
+        padding: 0%;
+        display: block;
+        position: static;
+    }
+
+    header {
+        width: 100%;
+        height: 100%;
+        margin: 0vh 0vh 0px 0vh;
+        padding: 3px 30px 660px 0px;
+        position: relative;
+        bottom: 40vh;
+    }
+
+    p {
+        color: #262627;
+        font-size: 23px;
+        width: 67%;
+        height: 56%;
+        margin: 5vh 2vh;
+        padding: 0%;
+        display: block;
+
+    }
+
+    .img {
+        top: 22vh;
+        width: 45%;
+        height: 23%;
+    }
+
+    .Easy {
+        font-size: 56px;
+        width: 65%;
+        height: 50%;
+        margin: 19px 3px 5px 5px;
+        padding: 0%;
+        display: block;
+        position: static;
+    }
+
+    header {
+        width: 100%;
+        height: 100%;
+        margin: 0vh 0vh 0px 0vh;
+        padding: 3px 30px 660px 0px;
+        position: relative;
+        bottom: 40vh;
+    }
+
+    p {
+        color: #262627;
+        font-size: 23px;
+        width: 67%;
+        height: 56%;
+        margin: 5vh 2vh;
+        padding: 0%;
+        display: block;
+
+    }
+
+    .img {
+        top: 22vh;
+        width: 45%;
+        height: 25%;
+        margin: 33px 33px 3px 2px;
+        position: relative;
+        padding: 0%;
+        bottom: 12vh;
+
+    }
+
+
+    .button {
+        width: 30%;
+        height: 60%;
+        margin: 20vh 2vh;
+        padding: 0%;
+        bottom: 45vh;
+        position: relative;
+        padding: 0%;
+        bottom: 45vh;
+        display: inline-block;
+    }
+
+
+
+}
+
+@media screen and (max-width: 450px) {
+
+    .Easy {
+        font-size: 36px;
+        line-height: 52px;
+        width: 33vh;
+        margin: 58px 50px 22px 50px;
+       
+
+
+    }
+
+    header {
+        width: 100%;
+        height: 100%;
+        margin: 0vh 0vh 0px 0vh;
+        padding: 3px 13px 660px 0px;
+        position: relative;
+        bottom: 40vh;
+    }
+
+
+    p {
+
+        color: #262627;
+        position: absolute;
+        font-size: 17px;
+        width: 72%;
+        height: 22%;
+        margin: 5vh;
+        padding: 0%;
+        text-align: center;
+
+
+    }
+
+
+    .button {
+        width: 30%;
+        height: 60%;
+        margin: 12vh 10vh;
+        padding: 0%;
+        bottom: 12vh;
+        position: relative;
+
+    }
+
+    .img {
+        width: 34%;
+        height: 31%;
+        bottom: 33px;
+        position: relative;
+        margin: 1px 1vh 3px 2px;
+        padding: 0%;
+        display: block;
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+}
