@@ -1,15 +1,14 @@
-// script.js — copie e cole diretamente
-// Interações: transformar individual, transformar todos, atalho 'T', acessibilidade leve.
+
 
 (() => {
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
-  // Atualiza ano no rodapé
-  const yearEl = document.getElementById('year');
+  
+  const yearEl = document.getElementById('2025');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // Preload imagens (melhora UX)
+ 
   const preload = [
     'https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto%2Cq_auto/Model-S-New-Specs-Plaid-Desktop-Imperial.png',
     'https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto%2Cq_auto/Model-3-Standard-Specs-Desktop-Imperial.png',
@@ -17,12 +16,12 @@
   ];
   preload.forEach(src => { const i = new Image(); i.src = src; });
 
-  // Individual transform buttons
+ 
   $$('.model-card').forEach(card => {
     const btn = card.querySelector('.transform');
     btn && btn.addEventListener('click', () => {
       card.classList.toggle('transformed');
-      // feedback visual (Web Animations API)
+      
       const img = card.querySelector('.model-img');
       if (img && img.animate) {
         img.animate(
@@ -33,14 +32,14 @@
     });
   });
 
-  // Global transform
+
   const globalBtn = document.getElementById('globalTransform');
   if (globalBtn) {
     globalBtn.addEventListener('click', () => {
       const cards = $$('.model-card');
       const any = cards.some(c => c.classList.contains('transformed'));
       cards.forEach(c => c.classList.toggle('transformed', !any));
-      // small collective pulse
+     
       cards.forEach(c => {
         const img = c.querySelector('.model-img');
         if (img && img.animate) {
@@ -53,7 +52,7 @@
     });
   }
 
-  // Hero image clickable transform (visual only)
+  
   const heroImg = document.getElementById('heroImage');
   if (heroImg) {
     heroImg.addEventListener('click', () => {
@@ -62,7 +61,7 @@
     });
   }
 
-  // Keyboard shortcut: 'T' toggles global
+ 
   window.addEventListener('keydown', e => {
     if (e.key && e.key.toLowerCase() === 't') {
       const btn = document.getElementById('globalTransform');
@@ -70,7 +69,7 @@
     }
   });
 
-  // Pointer feedback for buttons
+ 
   document.addEventListener('pointerdown', e => {
     const t = e.target.closest('.btn');
     if (t) t.style.transform = 'translateY(1px) scale(0.997)';
@@ -80,7 +79,7 @@
     if (t) t.style.transform = '';
   });
 
-  // Respect reduced-motion
+ 
   if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     document.documentElement.classList.add('reduced-motion');
   }
